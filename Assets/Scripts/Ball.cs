@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 5f;
     private Vector2 movementDirection;
+    public event EventHandler OnBrickDestroy;
+    public event EventHandler OnBallDestroy;
 
     private void Awake()
     {
@@ -38,5 +41,24 @@ public class Ball : MonoBehaviour
             Vector2 direction = new Vector2(hitPosition, 1).normalized;
             rb.velocity = direction * speed;
         }
+
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            Destroy(collision.gameObject);
+            OnBrickDestroy?.Invoke(this, EventArgs.Empty);
+        }
+
+        if (collision.gameObject.CompareTag("Deathzone"))
+        {
+            OnBallDestroy?.Invoke(this, EventArgs.Empty);
+            Destroy(gameObject);
+        }
     }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    
 }

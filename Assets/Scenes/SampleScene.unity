@@ -311,10 +311,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 4208668219592868390, guid: c6c0d04bd9e4f704990c65433460b0aa, type: 3}
   brickPrefab: {fileID: 1940566766225480884, guid: 7ee83ae10da8db944b65e051839ecdcd, type: 3}
-  xStart: -9
-  yStart: 4
-  xShift: 2
-  yShift: 0.2
+  xStart: -9.5
+  yStart: 4.32
+  xShift: 2.11
+  yShift: 0.23
 --- !u!4 &210179633
 Transform:
   m_ObjectHideFlags: 0
@@ -763,7 +763,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b3fff9496afc17d45b2d7bdf9ac54353, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 1633493890}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Deathzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

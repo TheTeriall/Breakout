@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paddle
   - Brick
+  - Deathzone
   layers:
   - Default
   - TransparentFX
