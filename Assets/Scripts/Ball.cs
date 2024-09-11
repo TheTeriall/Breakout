@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     private Vector2 movementDirection;
     public event EventHandler OnBrickDestroy;
     public event EventHandler OnBallDestroy;
+    public event EventHandler OnCeilingTouched;
 
     private void Awake()
     {
@@ -52,6 +53,11 @@ public class Ball : MonoBehaviour
         {
             OnBallDestroy?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Ceiling"))
+        {
+            OnCeilingTouched?.Invoke(this, EventArgs.Empty);
         }
     }
 

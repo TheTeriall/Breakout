@@ -12,6 +12,17 @@ public class Paddle : MonoBehaviour
     private float minX = -9.5f;
     private float maxX = 9.5f;
 
+    private void Start()
+    {
+        GameManager.Instance.NarrowPaddle += GameManager_NarrowPaddle;
+    }
+
+    private void GameManager_NarrowPaddle(object sender, System.EventArgs e)
+    {
+        // Make the paddle 5 % narrower on x
+        transform.localScale = new Vector3(transform.localScale.x * 0.95f, transform.localScale.y, transform.localScale.z);
+    }
+
     private void OnEnable()
     {
         breakoutInput.Enable();
